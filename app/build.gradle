@@ -32,6 +32,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -49,6 +52,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.11.0"
     implementation 'androidx.activity:activity-ktx:1.1.0'
 
     //Dagger
@@ -58,10 +62,10 @@ dependencies {
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
     // Networking
-    implementation "com.squareup.retrofit2:converter-moshi:2.6.2"
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //Coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0"
@@ -70,4 +74,6 @@ dependencies {
     // RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.2.18'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.amitshekhar.android:rx2-android-networking:1.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 }
